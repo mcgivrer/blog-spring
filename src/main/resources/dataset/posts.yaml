@@ -1,0 +1,38 @@
+post:
+  - id: 1
+    title: Watch Dogs
+    cover: http://ecx.images-amazon.com/images/I/81vltqLN7LL._SL500_.jpg
+    header: 
+    content: Récompensé par 83 awards et nominations dans le monde depuis son annonce événement \ 
+             en juin 2012, Watch Dogs est le jeu d’action et aventure \
+             en monde ouvert qui va redéfinir les standards du jeu vidéo nouvelle génération.\
+             Développé par Ubisoft Montréal, le studio des créateurs d’Assassin’s Creed III et \
+             Far Cry 3, Watch Dogs vous plonge au cœur de la ville hyper-connectée de Chicago, \
+             dans laquelle votre smartphone vous donne le contrôle de tout ce qui est connecté au \ 
+             réseau des caméras de surveillance aux feux de signalisation, en passant par le réseau \ 
+             électrique. Incarnez Aiden Pearce, un hacker hanté par son passé et lancé dans une \
+             vendetta contre les responsables du massacre de sa famille. Dans votre quête de \
+             justice, la ville elle-même devient une arme mortelle et vous en détenez maintenant \ 
+             le contrôle.
+    createdAt: 2015-11-24 21:43
+    createdBy: McG
+    status: draft
+  - id: 2
+    title: The bureau XCOM declassified
+    cover: http://ecx.images-amazon.com/images/I/71TVBgW74BL._SL1416_.jpg
+    header:
+    content: The Bureau - XCOM Declassified est un jeu de tir tactique à la troisième \
+             personne dont l’action se situe en 1962. La Guerre Froide provoque la peur \
+             sur la nation, mais un ennemi bien plus puissant et insidieux que le communisme \
+             menace le pays. Une unité top-secrète du gouvernement, appelée « Le Bureau », \
+             commence à enquêter et à dissimuler une série d’attaques mystérieuses. \
+             Dans le rôle de l’agent spécial William Carter, prenez les commandes, \
+             déclenchez les offensives et menez vos équipes dans un jeu de tir tactique à \
+             la troisième personne afin de sauver l’humanité \
+             d'une guerre redoutable et clandestine. Les piliers du jeu sont \
+             l’immersion dans l’Amérique des années 60, du combat tactique en équipe, \
+             des conséquences brutales et des camouflages gouvernementaux qui prouvent que \
+             nous ne sommes pas seuls dans l’univers.
+    createdAt: 2015-11-24 21:43
+    createdBy: McG
+    status: published

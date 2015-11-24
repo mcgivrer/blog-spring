@@ -15,7 +15,7 @@ import com.webcontext.apps.blog.repositories.IPostRepository;
 /**
  * The REst controller for the application.
  * 
- * @author frederic
+ * @author Frédéric Delorme
  *
  */
 @RestController
