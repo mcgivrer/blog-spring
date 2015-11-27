@@ -10,6 +10,6 @@ import com.webcontext.apps.blog.model.Post;
  * @author Frédéric Delorme
  *
  */
-public interface IPostRepository extends JpaRepository<Post, Long> {
+public interface PostRepository extends JpaRepository<Post, Integer> {
 
 }

@@ -23,6 +23,10 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-social-twitter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
@@ -49,6 +53,12 @@
 			<version>2.5.0</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>2.7.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -58,4 +68,24 @@
 			</plugin>
 		</plugins>
 	</build>
+	<scm>
+		<connection>scm:git:git@bitbucket.org:webcontext/blog.git</connection>
+		<developerConnection>scm:git:git@bitbucket.org:webcontext/blog.git</developerConnection>
+		<tag>${project.version}</tag>
+		<url>https://bitbucket.org/webcontext/blog.git</url>
+	</scm>
+	<url>https://bitbucket.org/webcontext/blog.git</url>
+	<inceptionYear>2015</inceptionYear>
+	<organization>
+		<name>WebContext</name>
+		<url>http://web-context.com</url>
+	</organization>
+	<issueManagement>
+		<url>https://bitbucket.org/webcontext/blog/issues</url>
+		<system>Bitbucket issues</system>
+	</issueManagement>
+	<ciManagement>
+		<system>travis-ci.org</system>
+		<url>https://travis-ci.org/Web-Context/blog</url>
+	</ciManagement>
 </project>

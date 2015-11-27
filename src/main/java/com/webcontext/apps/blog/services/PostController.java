@@ -3,14 +3,16 @@ package com.webcontext.apps.blog.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.webcontext.apps.blog.model.Post;
-import com.webcontext.apps.blog.repositories.IPostRepository;
+import com.webcontext.apps.blog.repositories.PostRepository;
 
 /**
  * The REst controller for the application.
@@ -19,31 +21,67 @@ import com.webcontext.apps.blog.repositories.IPostRepository;
  *
  */
 @RestController
-@RequestMapping("/posts")
 public class PostController {
 
 	@Autowired
-	private IPostRepository repo;
+	private PostRepository repo;
 
-	@RequestMapping(method = RequestMethod.GET)
+	/**
+	 * retrieve all posts
+	 * 
+	 * @return
+	 */
+	@RequestMapping(value="/posts", method = RequestMethod.GET)
 	public List<Post> findPosts() {
 		return repo.findAll();
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	/**
+	 * retrieve Post for id.
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value="/posts/{id}", method = RequestMethod.GET)
+	@ResponseStatus(HttpStatus.OK)
+	public Post findById(@PathVariable("id") Integer id) {
+		return repo.findOne(id);
+
+	}
+
+	/**
+	 * Create a new Post
+	 * 
+	 * @param item
+	 * @return
+	 */
+	@RequestMapping(value="/posts", method = RequestMethod.POST)
 	public Post addItem(@RequestBody Post item) {
 		item.setId(null);
 		return repo.saveAndFlush(item);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public Post updateItem(@RequestBody Post updatedItem, @PathVariable Long id) {
+	/**
+	 * Update a Post
+	 * 
+	 * @param updatedItem
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value="/posts/{id}", method = RequestMethod.PUT)
+	public Post updateItem(@RequestBody Post updatedItem, @PathVariable Integer id) {
 		updatedItem.setId(id);
 		return repo.saveAndFlush(updatedItem);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public void deleteItem(@PathVariable Long id) {
+	/**
+	 * Delete the Post with id.
+	 * 
+	 * @param id
+	 */
+	@RequestMapping(value="/posts/{id}", method = RequestMethod.DELETE)
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void deleteItem(@PathVariable Integer id) {
 		repo.delete(id);
 	}
 }
