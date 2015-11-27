@@ -21,7 +21,6 @@ import com.webcontext.apps.blog.repositories.PostRepository;
  *
  */
 @RestController
-@RequestMapping("/posts")
 public class PostController {
 
 	@Autowired
@@ -32,7 +31,7 @@ public class PostController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/posts", method = RequestMethod.GET)
 	public List<Post> findPosts() {
 		return repo.findAll();
 	}
@@ -43,9 +42,9 @@ public class PostController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/posts/{id}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
-	public Post findById(@PathVariable("id") long id) {
+	public Post findById(@PathVariable("id") Integer id) {
 		return repo.findOne(id);
 
 	}
@@ -56,7 +55,7 @@ public class PostController {
 	 * @param item
 	 * @return
 	 */
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value="/posts", method = RequestMethod.POST)
 	public Post addItem(@RequestBody Post item) {
 		item.setId(null);
 		return repo.saveAndFlush(item);
@@ -69,8 +68,8 @@ public class PostController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public Post updateItem(@RequestBody Post updatedItem, @PathVariable Long id) {
+	@RequestMapping(value="/posts/{id}", method = RequestMethod.PUT)
+	public Post updateItem(@RequestBody Post updatedItem, @PathVariable Integer id) {
 		updatedItem.setId(id);
 		return repo.saveAndFlush(updatedItem);
 	}
@@ -80,9 +79,9 @@ public class PostController {
 	 * 
 	 * @param id
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/posts/{id}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void deleteItem(@PathVariable Long id) {
+	public void deleteItem(@PathVariable Integer id) {
 		repo.delete(id);
 	}
 }

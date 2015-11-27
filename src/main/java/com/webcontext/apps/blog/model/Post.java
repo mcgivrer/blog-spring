@@ -19,8 +19,8 @@ import javax.persistence.Id;
 public class Post {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 
 	@Column
 	private String title;
@@ -42,6 +42,12 @@ public class Post {
 
 	@Column
 	private PublicationState status;
+
+	/**
+	 * Default constructor.
+	 */
+	public Post() {
+	}
 
 	/**
 	 * @param cover
@@ -67,7 +73,7 @@ public class Post {
 	/**
 	 * @return the id
 	 */
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -75,7 +81,7 @@ public class Post {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
