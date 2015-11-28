@@ -11,6 +11,7 @@ YaBlog is yetAnotherBlog engine, based on Spring-Boot technologies and friends.
     
 and that's all !
 
+(!) a simple IT test is performed today on the REst PostController
 
 Have Fun !
 
