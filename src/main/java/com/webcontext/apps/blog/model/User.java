@@ -51,7 +51,7 @@ public class User {
 
 	@NotEmpty
 	@Email
-	@Column(name="USEREMAIL")
+	@Column(name="EMAIL")
 	private String email;
 
 	

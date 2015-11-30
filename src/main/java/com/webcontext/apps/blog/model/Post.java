@@ -22,6 +22,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
+ * An entity to store some fantastic piece of text art.
+ * 
  * @author Frédéric Delorme
  *
  */
@@ -37,7 +39,6 @@ public class Post {
 	private String title;
 
 	@Column(name = "COVER")
-	@NotEmpty
 	@Size(min = 0, max = 255)
 	@URL
 	private String cover;
@@ -215,9 +216,10 @@ public class Post {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Post [id=").append(id).append(", title=\"").append(title).append("\", cover=\"").append(cover)
-				.append("\", header=\"").append(header).append("\", content=\"").append(content).append("\", createdAt=\"")
-				.append(createdAt).append("\", createdBy=\"").append(createdBy).append("\", locale=\"").append(locale)
-				.append("\", rated=\"").append(rated).append("\", status=\"").append(status).append("\"]");
+				.append("\", header=\"").append(header).append("\", content=\"").append(content)
+				.append("\", createdAt=\"").append(createdAt).append("\", createdBy=\"").append(createdBy)
+				.append("\", locale=\"").append(locale).append("\", rated=\"").append(rated).append("\", status=\"")
+				.append(status).append("\"]");
 		return builder.toString();
 	}
 
