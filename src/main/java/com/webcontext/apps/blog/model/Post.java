@@ -4,12 +4,22 @@
 package com.webcontext.apps.blog.model;
 
 import java.util.Date;
+import java.util.Locale;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.URL;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * @author Frédéric Delorme
@@ -22,44 +32,63 @@ public class Post {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	@Column
+	@Column(name = "TITLE")
+	@Size(min = 4, max = 150)
 	private String title;
 
-	@Column
+	@Column(name = "COVER")
+	@NotEmpty
+	@Size(min = 0, max = 255)
+	@URL
 	private String cover;
 
-	@Column
+	@Column(name = "HEADER")
+	@Size(min = 0, max = 300, message = "header must not be empty")
 	private String header;
 
-	@Column
+	@Column(name = "CONTENT")
+	@NotEmpty
+	@Size(min = 1, max = 4000, message = "content must not be empty")
 	private String content;
 
-	@Column
+	@Column(name = "CREATED_AT")
+	@DateTimeFormat(iso = ISO.DATE_TIME)
+	@CreationTimestamp
 	private Date createdAt;
-
-	@Column
+	@Column(name = "CREATED_BY")
+	@Size(min = 2, max = 30, message = "author can not be empty")
 	private String createdBy;
 
-	@Column
+	@Column(name = "LOCALE")
+	private Locale locale;
+
+	@Column(name = "RATED")
+	private String rated;
+
+	@Column(name = "STATUS")
+	@Enumerated(EnumType.STRING)
 	private PublicationState status;
 
 	/**
 	 * Default constructor.
 	 */
 	public Post() {
+		locale = new Locale("fr", "FR");
 	}
 
 	/**
-	 * @param cover
 	 * @param title
+	 * @param cover
 	 * @param header
 	 * @param content
 	 * @param createdAt
 	 * @param createdBy
+	 * @param locale
+	 * @param rated
 	 * @param status
 	 */
 	public Post(String title, String cover, String header, String content, Date createdAt, String createdBy,
-			PublicationState status) {
+			Locale locale, String rated, PublicationState status) {
 		super();
 		this.title = title;
 		this.cover = cover;
@@ -67,6 +96,8 @@ public class Post {
 		this.content = content;
 		this.createdAt = createdAt;
 		this.createdBy = createdBy;
+		this.locale = locale;
+		this.rated = rated;
 		this.status = status;
 	}
 
@@ -81,7 +112,7 @@ public class Post {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(Integer id) {
+	public void setId( Integer id ) {
 		this.id = id;
 	}
 
@@ -96,7 +127,7 @@ public class Post {
 	 * @param title
 	 *            the title to set
 	 */
-	public void setTitle(String title) {
+	public void setTitle( String title ) {
 		this.title = title;
 	}
 
@@ -111,7 +142,7 @@ public class Post {
 	 * @param header
 	 *            the header to set
 	 */
-	public void setHeader(String header) {
+	public void setHeader( String header ) {
 		this.header = header;
 	}
 
@@ -126,7 +157,7 @@ public class Post {
 	 * @param content
 	 *            the content to set
 	 */
-	public void setContent(String content) {
+	public void setContent( String content ) {
 		this.content = content;
 	}
 
@@ -141,7 +172,7 @@ public class Post {
 	 * @param createdAt
 	 *            the createdAt to set
 	 */
-	public void setCreatedAt(Date createdAt) {
+	public void setCreatedAt( Date createdAt ) {
 		this.createdAt = createdAt;
 	}
 
@@ -156,7 +187,7 @@ public class Post {
 	 * @param createdBy
 	 *            the createdBy to set
 	 */
-	public void setCreatedBy(String createdBy) {
+	public void setCreatedBy( String createdBy ) {
 		this.createdBy = createdBy;
 	}
 
@@ -171,7 +202,7 @@ public class Post {
 	 * @param publish
 	 *            the publish to set
 	 */
-	public void setStatus(PublicationState status) {
+	public void setStatus( PublicationState status ) {
 		this.status = status;
 	}
 
@@ -183,10 +214,10 @@ public class Post {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Post [id=").append(id).append(", title=").append(title).append(", cover=").append(cover)
-				.append(", header=").append(header).append(", content=").append(content).append(", createdAt=")
-				.append(createdAt).append(", createdBy=").append(createdBy).append(", status=").append(status)
-				.append("]");
+		builder.append("Post [id=").append(id).append(", title=\"").append(title).append("\", cover=\"").append(cover)
+				.append("\", header=\"").append(header).append("\", content=\"").append(content).append("\", createdAt=\"")
+				.append(createdAt).append("\", createdBy=\"").append(createdBy).append("\", locale=\"").append(locale)
+				.append("\", rated=\"").append(rated).append("\", status=\"").append(status).append("\"]");
 		return builder.toString();
 	}
 
@@ -205,6 +236,8 @@ public class Post {
 		result = prime * result + ((createdBy == null) ? 0 : createdBy.hashCode());
 		result = prime * result + ((header == null) ? 0 : header.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((locale == null) ? 0 : locale.hashCode());
+		result = prime * result + ((rated == null) ? 0 : rated.hashCode());
 		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
@@ -216,7 +249,7 @@ public class Post {
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals( Object obj ) {
 		if (this == obj) {
 			return true;
 		}
@@ -267,6 +300,20 @@ public class Post {
 				return false;
 			}
 		} else if (!id.equals(other.id)) {
+			return false;
+		}
+		if (locale == null) {
+			if (other.locale != null) {
+				return false;
+			}
+		} else if (!locale.equals(other.locale)) {
+			return false;
+		}
+		if (rated == null) {
+			if (other.rated != null) {
+				return false;
+			}
+		} else if (!rated.equals(other.rated)) {
 			return false;
 		}
 		if (status != other.status) {

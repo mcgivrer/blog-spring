@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<post 
+		id="1" 
+		title="Watch Dogs"
+		cover="http://ecx.images-amazon.com/images/I/81vltqLN7LL._SL500_.jpg"
+		header="Récompensé par 83 awards et nominations dans le monde depuis son annonce événement \ 
+en juin 2012, Watch Dogs est le jeu d’action et aventure \
+en monde ouvert qui va redéfinir les standards du jeu vidéo nouvelle génération."
+		content="Récompensé par 83 awards et nominations dans le monde depuis son annonce événement \ 
+en juin 2012, Watch Dogs est le jeu d’action et aventure \
+en monde ouvert qui va redéfinir les standards du jeu vidéo nouvelle génération.\
+Développé par Ubisoft Montréal, le studio des créateurs d’Assassin’s Creed III et \
+Far Cry 3, Watch Dogs vous plonge au cœur de la ville hyper-connectée de Chicago, \
+dans laquelle votre smartphone vous donne le contrôle de tout ce qui est connecté au \ 
+réseau des caméras de surveillance aux feux de signalisation, en passant par le réseau \ 
+électrique. Incarnez Aiden Pearce, un hacker hanté par son passé et lancé dans une \
+vendetta contre les responsables du massacre de sa famille. Dans votre quête de \
+justice, la ville elle-même devient une arme mortelle et vous en détenez maintenant \ 
+le contrôle."
+		created_at="2015-11-24 21:43:00.000" 
+		created_by="McG" 
+		locale="FRENCH"
+		rated="+18" status="PUBLISHED" />
+	<post 
+		id="2" 
+		title="The bureau XCOM declassified"
+		cover="http://ecx.images-amazon.com/images/I/71TVBgW74BL._SL1416_.jpg"
+		header="The Bureau - XCOM Declassified est un jeu de tir tactique à la troisième \
+personne dont l’action se situe en 1962."
+		content="The Bureau - XCOM Declassified est un jeu de tir tactique à la troisième \
+personne dont l’action se situe en 1962. La Guerre Froide provoque la peur \
+sur la nation, mais un ennemi bien plus puissant et insidieux que le communisme \
+menace le pays. Une unité top-secrète du gouvernement, appelée « Le Bureau », \
+commence à enquêter et à dissimuler une série d’attaques mystérieuses. \
+Dans le rôle de l’agent spécial William Carter, prenez les commandes, \
+déclenchez les offensives et menez vos équipes dans un jeu de tir tactique à \
+la troisième personne afin de sauver l’humanité \
+d'une guerre redoutable et clandestine. Les piliers du jeu sont \
+l’immersion dans l’Amérique des années 60, du combat tactique en équipe, \
+des conséquences brutales et des camouflages gouvernementaux qui prouvent que \
+nous ne sommes pas seuls dans l’univers."
+		created_at="2015-11-24 21:43:00.000" 
+		created_by="McG" 
+		locale="FRENCH"
+		rated="+18" 
+		status="PUBLISHED" />
+	<post id="3" title="The Witcher 3"
+		cover="http://ecx.images-amazon.com/images/I/81o0jF6OZoL._SL1418_.jpg"
+		header="Vous êtes Geralt de Riv, un chasseur de monstre professionnel, un sorceleur.  \
+Pris dans la tourmente politique qui s’est emparée de Temeria, Geralt aida à \
+réprimer la rébellion de l’Ordre de la Rose Ardente."
+		content="Vous êtes Geralt de Riv, un chasseur de monstre professionnel, un sorceleur.  \
+Pris dans la tourmente politique qui s’est emparée de Temeria, Geralt aida à \
+réprimer la rébellion de l’Ordre de la Rose Ardente. Peu après, il sauva la \
+vie du roi Foltest quand le monarque fut attaqué par un assassin ressemblant \
+à un sorceleur. Geralt continua de protéger le roi en tant que garde du corps \
+personnel tandis que Foltest tentait de ramener la paix dans son royaume. \
+Les derniers bastions de l’Ordre ayant cédé face à l’armée royale, il restait \
+une chose à accomplir – la Baronne de La Valette avait annoncé son retrait du \
+royaume et sa forteresse devait être prise. Un mois après la tentative d’assassinat, \
+les armées de Foltest attendent aux portes du Château de La Valette, \
+se préparant pour l’assaut final. Toujours aux côtés de Foltest, Geralt est \
+parmi les soldats, dans l’impossibilité de commencer sa quête personnelle \
+pour découvrir l’origine et l’identité du mystérieux assassin…"
+		created_at="2015-11-30 10:49:00.000" 
+		created_by="McG" 
+		locale="FRENCH"
+		rated="+18" status="DRAFT" />
+</dataset>

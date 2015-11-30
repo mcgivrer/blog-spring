@@ -14,9 +14,9 @@ post:
              vendetta contre les responsables du massacre de sa famille. Dans votre quête de \
              justice, la ville elle-même devient une arme mortelle et vous en détenez maintenant \ 
              le contrôle.
-    createdAt: 2015-11-24 21:43
+    createdAt: '2015-11-24 21:43'
     createdBy: McG
-    status: draft
+    status: published
   - id: 2
     title: The bureau XCOM declassified
     cover: http://ecx.images-amazon.com/images/I/71TVBgW74BL._SL1416_.jpg
@@ -33,6 +33,26 @@ post:
              l’immersion dans l’Amérique des années 60, du combat tactique en équipe, \
              des conséquences brutales et des camouflages gouvernementaux qui prouvent que \
              nous ne sommes pas seuls dans l’univers.
-    createdAt: 2015-11-24 21:43
+    createdAt: '2015-11-24 21:43'
     createdBy: McG
     status: published
+  - id:3
+    title: The Witcher 3
+    cover: http://ecx.images-amazon.com/images/I/81o0jF6OZoL._SL1418_.jpg
+    header: 
+    content: Vous êtes Geralt de Riv, un chasseur de monstre professionnel, un sorceleur.  \
+             Pris dans la tourmente politique qui s’est emparée de Temeria, Geralt aida à \
+             réprimer la rébellion de l’Ordre de la Rose Ardente. Peu après, il sauva la \
+             vie du roi Foltest quand le monarque fut attaqué par un assassin ressemblant \
+             à un sorceleur. Geralt continua de protéger le roi en tant que garde du corps \
+             personnel tandis que Foltest tentait de ramener la paix dans son royaume. \
+             Les derniers bastions de l’Ordre ayant cédé face à l’armée royale, il restait \
+             une chose à accomplir – la Baronne de La Valette avait annoncé son retrait du \
+             royaume et sa forteresse devait être prise. Un mois après la tentative d’assassinat, \
+             les armées de Foltest attendent aux portes du Château de La Valette, \
+             se préparant pour l’assaut final. Toujours aux côtés de Foltest, Geralt est \
+             parmi les soldats, dans l’impossibilité de commencer sa quête personnelle \
+             pour découvrir l’origine et l’identité du mystérieux assassin…
+    createdAt: McG
+    createdBy: '2015-11-30 10:49'
+    status: draft 
