@@ -97,6 +97,6 @@
 	</issueManagement>
 	<ciManagement>
 		<system>travis-ci.org</system>
-		<url>https://travis-ci.org/Web-Context/blog</url>
+		<url>https://travis-ci.org/McGivrer/blog</url>
 	</ciManagement>
 </project>
