@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
 	<user username="admin" 
-		useremail="admin@web-context.com"
-		password="admin" 
+		email="admin@web-context.com"
+		password="passw0rd" 
 		firstname="admin" 
 		lastname="admin" 
 		last_connection="2015-11-30 15:16:00.000"
@@ -10,8 +10,8 @@
 		created_by="admin"
 		user_profile="ADMIN" />
 	<user username="McGivrer" 
-		useremail="frederic.delorme@gmail.com"
-		password="McGivrer" 
+		email="frederic.delorme@gmail.com"
+		password="passw0rd" 
 		firstname="Frédéric" 
 		lastname="Delorme" 
 		last_connection="2015-11-30 15:16:00.000"

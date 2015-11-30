@@ -26,13 +26,46 @@ public enum UserProfile {
 	/**
 	 * Anybody can read posts
 	 */
-	PUBLIC,
+	PUBLIC("PUB", "public"),
 	/**
 	 * A user can write posts
 	 */
-	WRITER,
+	WRITER("WRT", "writer"),
 	/**
 	 * A user can manage all blog entities.
 	 */
-	ADMIN
+	ADMIN("ADM", "administrator");
+
+	/**
+	 * Internal code for the profile.
+	 */
+	private String code = "";
+	/**
+	 * Internal name for the profile.
+	 */
+	private String name = "";
+
+	private UserProfile(String code, String name) {
+		this.code = code;
+		this.name = name;
+	}
+
+	/**
+	 * Return name for this profile.
+	 * 
+	 * @return
+	 */
+	public String getName() {
+		return this.name;
+	}
+
+	/**
+	 * return code for this profile.
+	 * 
+	 * @return
+	 */
+	public String getCode() {
+		return this.code;
+	}
+
 }

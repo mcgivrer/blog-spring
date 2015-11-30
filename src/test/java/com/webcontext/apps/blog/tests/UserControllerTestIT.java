@@ -67,15 +67,15 @@ public class UserControllerTestIT {
 	}
 
 	@Test
-	public void canFindAllPost() {
-		when().get("/users").then().statusCode(HttpStatus.SC_OK).body("title", Matchers.hasItems("admin", "McGivrer"));
+	public void canFindAllUsers() {
+		when().get("/users").then().statusCode(HttpStatus.SC_OK).body("username", Matchers.hasItems("admin", "McGivrer"));
 	}
 
 	/**
 	 * Test method for {@link com.webcontext.apps.blog.services.PostController#findById(long)}.
 	 */
 	@Test
-	public void canFindPostById() {
+	public void canFindUserById() {
 		when().get("/users/{username}", "McGivrer").then().statusCode(HttpStatus.SC_OK).body("firstname",
 				Matchers.is("Frédéric"));
 	}
@@ -84,14 +84,14 @@ public class UserControllerTestIT {
 	 * Test method for {@link com.webcontext.apps.blog.services.PostController#addItem(com.webcontext.apps.blog.model.Post)} .
 	 */
 	@Test
-	public void canAddNewPost() {
+	public void canAddNewUser() {
 		User usertoBeAdded = new User("test01", "test01pwd", "test@contact.com", "test01", "test01", new Date(),
 				new Date(), "admin", UserProfile.PUBLIC);
 		expect().statusCode(HttpStatus.SC_OK).given().body(usertoBeAdded).contentType(ContentType.JSON).post("/users");
 	}
 
 	@Test
-	public void canNotAddEmptyFieldsPost() {
+	public void canNotAddEmptyFieldsUser() {
 		User user = new User("", "", "", "", "", null, null, "", UserProfile.PUBLIC);
 		expect().statusCode(HttpStatus.SC_INTERNAL_SERVER_ERROR).given().body(user).contentType(ContentType.JSON)
 				.post("/users");
@@ -103,7 +103,7 @@ public class UserControllerTestIT {
 	 * {@link com.webcontext.apps.blog.services.PostController#updateItem(com.webcontext.apps.blog.model.Post, java.lang.Long)} .
 	 */
 	@Test
-	public void canUpdateExistingPost() {
+	public void canUpdateExistingUser() {
 		User userTobeUpdate = userRepo.findOne("admin");
 		System.out.println(userTobeUpdate);
 		userTobeUpdate.setFirstname("Frédéric");
@@ -115,7 +115,7 @@ public class UserControllerTestIT {
 	 * Test method for {@link com.webcontext.apps.blog.services.PostController#deleteItem(java.lang.Long)} .
 	 */
 	@Test
-	public void canDeletePost0() {
+	public void canDeleteUserMcGivrer() {
 		when().delete("/users/{username}", "McGivrer").then().statusCode(HttpStatus.SC_NO_CONTENT);
 	}
 
