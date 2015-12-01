@@ -1,4 +1,4 @@
-<img style="float:right;" title="Blog build project status" src="https://travis-ci.org/mcgivrer/blog.svg" data-pin-nopin="true">
+<img style="float:right;" title="Blog build project status" src="https://travis-ci.org/mcgivrer/blog-spring.svg" data-pin-nopin="true">
 
 # README
 

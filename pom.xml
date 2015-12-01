@@ -16,6 +16,10 @@
 		<version>1.2.0.RELEASE</version>
 	</parent>
 
+	<properties>
+		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -69,11 +73,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
 				<configuration>
 					<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.7</source>
+					<target>1.7</target>
 					<encoding>utf-8</encoding>
 				</configuration>
 			</plugin>
@@ -97,6 +100,6 @@
 	</issueManagement>
 	<ciManagement>
 		<system>travis-ci.org</system>
-		<url>https://travis-ci.org/McGivrer/blog</url>
+		<url>https://travis-ci.org/McGivrer/blog-spring</url>
 	</ciManagement>
 </project>
