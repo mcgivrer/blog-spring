@@ -1,4 +1,4 @@
-<img style="float:right;" title="Blog build project status" src="https://travis-ci.org/mcgivrer/blog-spring.svg" data-pin-nopin="true">
+[![Build status](https://travis-ci.org/mcgivrer/blog-spring.svg)](https://travis-ci.org/mcgivrer/blog-spring/builds "Blog build project status")
 
 # README
 
@@ -17,4 +17,3 @@ Have Fun !
 
 
 McG.
-
