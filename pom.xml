@@ -3,7 +3,7 @@
 
 	<groupId>com.webcontext.apps</groupId>
 	<artifactId>blog</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 	<name>blog</name>
 
@@ -106,7 +106,7 @@
 	<scm>
 		<connection>scm:git:git@bitbucket.org:webcontext/blog.git</connection>
 		<developerConnection>scm:git:git@bitbucket.org:webcontext/blog.git</developerConnection>
-		<tag>blog</tag>
+		<tag>${project.version}</tag>
 		<url>https://bitbucket.org/webcontext/blog.git</url>
 	</scm>
 	<url>https://bitbucket.org/webcontext/blog.git</url>
