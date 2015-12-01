@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.webcontext.apps</groupId>
 	<artifactId>blog</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 
 	<name>blog</name>
 
@@ -107,7 +106,7 @@
 	<scm>
 		<connection>scm:git:git@bitbucket.org:webcontext/blog.git</connection>
 		<developerConnection>scm:git:git@bitbucket.org:webcontext/blog.git</developerConnection>
-		<tag>${project.version}</tag>
+		<tag>blog</tag>
 		<url>https://bitbucket.org/webcontext/blog.git</url>
 	</scm>
 	<url>https://bitbucket.org/webcontext/blog.git</url>
