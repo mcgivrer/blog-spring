@@ -10,8 +10,20 @@
 				method : "DELETE"
 			}
 		});
+	},
+	UserFactory = function($resource) {
+		return $resource('/users/:username', {
+			id : '@username'
+		}, {
+			update : {
+				method : "PUT"
+			},
+			remove : {
+				method : "DELETE"
+			}
+		});
 	};
 
-	PostFactory.$inject = [ '$resource' ];
-	angular.module("myApp.services").factory("Post", PostFactory);
+	UserFactory.$inject = [ '$resource' ];
+	angular.module("myApp.services").factory("User", UserFactory);
 }(angular));

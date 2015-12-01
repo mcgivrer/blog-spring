@@ -2,11 +2,10 @@ post:
   - id: 1
     title: Watch Dogs
     cover: http://ecx.images-amazon.com/images/I/81vltqLN7LL._SL500_.jpg
-    header: 
-    content: Récompensé par 83 awards et nominations dans le monde depuis son annonce événement \ 
-             en juin 2012, Watch Dogs est le jeu d’action et aventure \
-             en monde ouvert qui va redéfinir les standards du jeu vidéo nouvelle génération.\
-             Développé par Ubisoft Montréal, le studio des créateurs d’Assassin’s Creed III et \
+    header: Récompensé par 83 awards et nominations dans le monde depuis son annonce événement \ 
+            en juin 2012, Watch Dogs est le jeu d’action et aventure \
+            en monde ouvert qui va redéfinir les standards du jeu vidéo nouvelle génération.\
+    content: Développé par Ubisoft Montréal, le studio des créateurs d’Assassin’s Creed III et \
              Far Cry 3, Watch Dogs vous plonge au cœur de la ville hyper-connectée de Chicago, \
              dans laquelle votre smartphone vous donne le contrôle de tout ce qui est connecté au \ 
              réseau des caméras de surveillance aux feux de signalisation, en passant par le réseau \ 
@@ -14,15 +13,24 @@ post:
              vendetta contre les responsables du massacre de sa famille. Dans votre quête de \
              justice, la ville elle-même devient une arme mortelle et vous en détenez maintenant \ 
              le contrôle.
-    createdAt: '2015-11-24 21:43'
-    createdBy: McG
-    status: published
+    createdAt: '2015-11-24 21:43:00.000'
+    createdBy: McGivrer
+		tags: adventure, action, openworld, gta-like
+		platform: X360
+		platforms: 
+		   - X360
+			 - XONE
+			 - PS3
+			 - PS4
+			 - PC
+		publisher: Ubisoft Montréal
+		status: PUBLISHED
   - id: 2
     title: The bureau XCOM declassified
     cover: http://ecx.images-amazon.com/images/I/71TVBgW74BL._SL1416_.jpg
-    header:
-    content: The Bureau - XCOM Declassified est un jeu de tir tactique à la troisième \
-             personne dont l’action se situe en 1962. La Guerre Froide provoque la peur \
+    header: The Bureau - XCOM Declassified est un jeu de tir tactique à la troisième \
+            personne dont l’action se situe en 1962. 
+    content: La Guerre Froide provoque la peur \
              sur la nation, mais un ennemi bien plus puissant et insidieux que le communisme \
              menace le pays. Une unité top-secrète du gouvernement, appelée « Le Bureau », \
              commence à enquêter et à dissimuler une série d’attaques mystérieuses. \
@@ -33,16 +41,25 @@ post:
              l’immersion dans l’Amérique des années 60, du combat tactique en équipe, \
              des conséquences brutales et des camouflages gouvernementaux qui prouvent que \
              nous ne sommes pas seuls dans l’univers.
-    createdAt: '2015-11-24 21:43'
-    createdBy: McG
-    status: published
-  - id:3
+    createdAt: '2015-11-24 21:43:00.000'
+    createdBy: McGivrer
+		tags: adventure, action, str, fps
+		platform: X360
+		platforms: 
+		   - X360
+			 - XONE
+			 - PS3
+			 - PS4
+			 - PC
+		publisher: 
+    status: PUBLISHED
+  - id: 3
     title: The Witcher 3
     cover: http://ecx.images-amazon.com/images/I/81o0jF6OZoL._SL1418_.jpg
-    header: 
-    content: Vous êtes Geralt de Riv, un chasseur de monstre professionnel, un sorceleur.  \
-             Pris dans la tourmente politique qui s’est emparée de Temeria, Geralt aida à \
-             réprimer la rébellion de l’Ordre de la Rose Ardente. Peu après, il sauva la \
+    header: Vous êtes Geralt de Riv, un chasseur de monstre professionnel, un sorceleur.  \
+            Pris dans la tourmente politique qui s’est emparée de Temeria, Geralt aida à \
+            réprimer la rébellion de l’Ordre de la Rose Ardente. 
+    content: Peu après, il sauva la \
              vie du roi Foltest quand le monarque fut attaqué par un assassin ressemblant \
              à un sorceleur. Geralt continua de protéger le roi en tant que garde du corps \
              personnel tandis que Foltest tentait de ramener la paix dans son royaume. \
@@ -53,6 +70,15 @@ post:
              se préparant pour l’assaut final. Toujours aux côtés de Foltest, Geralt est \
              parmi les soldats, dans l’impossibilité de commencer sa quête personnelle \
              pour découvrir l’origine et l’identité du mystérieux assassin…
-    createdAt: McG
-    createdBy: '2015-11-30 10:49'
-    status: draft 
+    createdAt: McGivrer
+    createdBy: '2015-11-30 10:49:00.000'
+		tags: adventure, action, openworld, rpg
+		platform: X360
+		platforms: 
+		   - X360
+			 - XONE
+			 - PS3
+			 - PS4
+			 - PC
+		publisher: PIRANHA BYTES
+    status: DRAFT
