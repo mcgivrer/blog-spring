@@ -14,7 +14,7 @@
  *
  */
 
-package com.webcontext.apps.blog.tests;
+package com.webcontext.apps.blog.tests.ut;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
