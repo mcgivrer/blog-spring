@@ -1,4 +1,4 @@
-[![Build status](https://travis-ci.org/mcgivrer/blog-spring.svg)](https://travis-ci.org/mcgivrer/blog-spring "Blog build project status")
+[![Build status](https://travis-ci.org/mcgivrer/blog-spring.svg)](https://travis-ci.org/mcgivrer/blog-spring/builds "Blog build project status")
 
 # README
 
