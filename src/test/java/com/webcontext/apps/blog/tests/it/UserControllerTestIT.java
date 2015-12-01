@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.webcontext.apps.blog.tests;
+package com.webcontext.apps.blog.tests.it;
 
 import static com.jayway.restassured.RestAssured.expect;
 import static com.jayway.restassured.RestAssured.when;
