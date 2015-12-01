@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.webcontext.apps</groupId>
 	<artifactId>blog</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 	<name>blog</name>
 
@@ -15,6 +14,10 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.2.0.RELEASE</version>
 	</parent>
+
+	<properties>
+		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -69,12 +72,33 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
 				<configuration>
 					<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.7</source>
+					<target>1.7</target>
 					<encoding>utf-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<failOnError>false</failOnError>
+					<author>Frédéric Delorme</author>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<connectionUrl>scm:git:git@bitbucket.org:webcontext/blog.git</connectionUrl>
+					<releaseLabel>${project.artifactId}</releaseLabel>
+					<releaseVersion>${project.version}</releaseVersion>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -97,6 +121,6 @@
 	</issueManagement>
 	<ciManagement>
 		<system>travis-ci.org</system>
-		<url>https://travis-ci.org/McGivrer/blog</url>
+		<url>https://travis-ci.org/McGivrer/blog-spring</url>
 	</ciManagement>
 </project>

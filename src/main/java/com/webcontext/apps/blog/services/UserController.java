@@ -31,9 +31,9 @@ public class UserController {
 	}
 
 	/**
-	 * retrieve Post for id.
+	 * retrieve Post for username.
 	 * 
-	 * @param id
+	 * @param username
 	 * @return
 	 */
 	@RequestMapping(value = "/users/{username}", method = RequestMethod.GET)
@@ -59,7 +59,7 @@ public class UserController {
 	 * Update a Post
 	 * 
 	 * @param updatedItem
-	 * @param id
+	 * @param username
 	 * @return
 	 */
 	@RequestMapping(value = "/users/{username}", method = RequestMethod.PUT)
@@ -69,9 +69,9 @@ public class UserController {
 	}
 
 	/**
-	 * Delete the Post with id.
+	 * Delete the Post with username.
 	 * 
-	 * @param id
+	 * @param username
 	 */
 	@RequestMapping(value = "/users/{username}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
