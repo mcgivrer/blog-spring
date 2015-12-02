@@ -23,6 +23,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -37,53 +38,59 @@ import org.hibernate.validator.constraints.NotEmpty;
  *
  */
 @Entity
+@Table(name = "blogusers")
 public class User {
 
 	@Id
 	@Size(min = 4, max = 30)
-	@Column(name="USERNAME")
+	@Column(name = "USERNAME")
 	private String username;
 
 	@NotEmpty
 	@Size(min = 6, max = 255)
-	@Column(name="PASSWORD")
+	@Column(name = "PASSWORD")
 	private String password;
 
 	@NotEmpty
 	@Email
-	@Column(name="EMAIL")
+	@Column(name = "EMAIL")
 	private String email;
 
-	
 	@Size(min = 0, max = 60)
-	@Column(name="FIRSTNAME")
+	@Column(name = "FIRSTNAME")
 	private String firstname;
 
 	@Size(min = 0, max = 60)
-	@Column(name="LASTNAME")
+	@Column(name = "LASTNAME")
 	private String lastname;
 
 	@UpdateTimestamp
-	@Column(name="LAST_CONNECTION")
+	@Column(name = "LAST_CONNECTION")
 	private Date lastConnection;
 
 	@CreationTimestamp
-	@Column(name="CREATED_AT")	
+	@Column(name = "CREATED_AT")
 	private Date createdAt;
 
 	@NotEmpty
-	@Column(name="CREATED_BY")
+	@Column(name = "CREATED_BY")
 	private String createdBy;
 
 	@Enumerated(EnumType.STRING)
-	@Column(name="USER_PROFILE")
+	@Column(name = "USER_PROFILE")
 	UserProfile profile;
 
+	/**
+	 * Default constructor.
+	 */
 	public User() {
-		// TODO Auto-generated constructor stub
+		super();
+
 	}
 
 	/**
+	 * Parameterized User constructor.
+	 * 
 	 * @param username
 	 * @param password
 	 * @param email
@@ -95,7 +102,7 @@ public class User {
 	 */
 	public User(String username, String password, String email, String firstname, String lastname, Date lastConnection,
 			Date createdAt, String createdBy, UserProfile profile) {
-		super();
+		this();
 		this.username = username;
 		this.password = password;
 		this.email = email;

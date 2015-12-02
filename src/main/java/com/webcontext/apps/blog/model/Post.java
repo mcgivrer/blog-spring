@@ -13,6 +13,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -28,6 +29,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
  *
  */
 @Entity
+@Table(name = "blogposts")
 public class Post {
 
 	@Id

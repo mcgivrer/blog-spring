@@ -37,7 +37,9 @@ import com.webcontext.apps.blog.model.UserProfile;
 import com.webcontext.apps.blog.repositories.UserRepository;
 
 /**
- * @author frederic
+ * Integration test for rest service from UserController.
+ * 
+ * @author Frédéric Delorme
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -68,7 +70,8 @@ public class UserControllerTestIT {
 
 	@Test
 	public void canFindAllUsers() {
-		when().get("/users").then().statusCode(HttpStatus.SC_OK).body("username", Matchers.hasItems("admin", "McGivrer"));
+		when().get("/users").then().statusCode(HttpStatus.SC_OK).body("username",
+				Matchers.hasItems("admin", "McGivrer"));
 	}
 
 	/**

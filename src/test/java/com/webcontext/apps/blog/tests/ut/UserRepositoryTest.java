@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNotNull;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import org.junit.After;
 import org.junit.Before;
@@ -40,24 +39,21 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.webcontext.apps.blog.Application;
-import com.webcontext.apps.blog.model.Post;
-import com.webcontext.apps.blog.model.PublicationState;
 import com.webcontext.apps.blog.model.User;
 import com.webcontext.apps.blog.model.UserProfile;
 import com.webcontext.apps.blog.repositories.UserRepository;
 
 /**
- * @author 212391884
+ * Unit Tests for UserRespository.
+ * 
+ * @author Frédéric Delorme
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@TestExecutionListeners({ 
-	DependencyInjectionTestExecutionListener.class, 
-	DirtiesContextTestExecutionListener.class,
-	TransactionalTestExecutionListener.class, 
-	DbUnitTestExecutionListener.class })
+@TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, DirtiesContextTestExecutionListener.class,
+		TransactionalTestExecutionListener.class, DbUnitTestExecutionListener.class })
 @DatabaseSetup("/datasets/users.xml")
 public class UserRepositoryTest {
 
@@ -84,8 +80,8 @@ public class UserRepositoryTest {
 	@Test
 	public void testSaveS() {
 		Date today = new Date();
-		User usertoBeAdded = new User("test01", "test01pwd", "test@contact.com", "test01", "test01", today,
-				today, "admin", UserProfile.PUBLIC);
+		User usertoBeAdded = new User("test01", "test01pwd", "test@contact.com", "test01", "test01", today, today,
+				"admin", UserProfile.PUBLIC);
 		usertoBeAdded = userRepo.save(usertoBeAdded);
 		assertNotNull(usertoBeAdded.getUsername());
 	}

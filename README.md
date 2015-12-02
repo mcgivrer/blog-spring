@@ -1,17 +1,21 @@
 [![Build status](https://travis-ci.org/mcgivrer/blog-spring.svg)](https://travis-ci.org/mcgivrer/blog-spring/builds "Blog build project status")
 
+
 # README
 
 ## YaBlog
 
-YaBlog is yetAnotherBlog engine, based on Spring-Boot technologies and friends.
+YaBlog is **Y**et**A**nother**B**log engine, based on Spring-Boot technologies and friends.
 
     $> maven clean install
     $> maven spring-boot:run
     
+let's access [http://localhost:8080/](http://localhost:8080/ "access the blog home page")
+
 and that's all !
 
-(!) a simple IT test is performed today on the REst PostController
+>**Note | **
+>*Some simple IT and UT tests are performed on REst controllers and persistence.*
 
 Have Fun !
 

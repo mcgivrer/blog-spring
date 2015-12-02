@@ -18,7 +18,6 @@ package com.webcontext.apps.blog.tests.ut;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -26,7 +25,6 @@ import java.util.List;
 import java.util.Locale;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,17 +45,16 @@ import com.webcontext.apps.blog.model.PublicationState;
 import com.webcontext.apps.blog.repositories.PostRepository;
 
 /**
- * @author 212391884
+ * Unit Tests for PostRepository.
+ * 
+ * @author Frédéric Delorme
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
-@TestExecutionListeners({ 
-	DependencyInjectionTestExecutionListener.class, 
-	DirtiesContextTestExecutionListener.class,
-	TransactionalTestExecutionListener.class, 
-	DbUnitTestExecutionListener.class })
+@TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, DirtiesContextTestExecutionListener.class,
+		TransactionalTestExecutionListener.class, DbUnitTestExecutionListener.class })
 @DatabaseSetup("/datasets/posts.xml")
 public class PostRepositoryTest {
 
@@ -84,22 +81,19 @@ public class PostRepositoryTest {
 	@Test
 	public void testSaveS() {
 		Date today = new Date();
-		Post post = new Post("Mario maker",
-				"http://ecx.images-amazon.com/images/I/81NvDQon5NL._SL1500_.jpg",
+		Post post = new Post("Mario maker", "http://ecx.images-amazon.com/images/I/81NvDQon5NL._SL1500_.jpg",
 				"Avec un nombre quasiment illimité de stages, Super Mario Maker exclusivement disponible sur Wii U "
-			    +"propose une expérience Mario amusante destinées à tous et sans limite ! " ,
+						+ "propose une expérience Mario amusante destinées à tous et sans limite ! ",
 				"Jouez : un jeu Mario qui ne se termine jamais !"
-				+ "En vous connectant à Internet*, vous pouvez télécharger et jouer dans des stages créés par d'autres joueurs du monde entier ! "
-				+ "100 stages sont également inclus et seront jouables sans qu'une connexion à Internet soit nécessaire. "
-				+ "Créez : concevez vos propres stages ! "
-				+ "Donnez libre cours à votre imagination et découvrez ce que vous arriverez à réaliser avec un éditeur de stages intuitif. "
-				+ "Partagez : envoyez vos créations pour que le monde entier en profite ! "
-				+ "En publiant vos propres créations, vous donnez aux joueur du monde entier la possibilité de les essayer ! "
-				+ "Découvrez d'innombrables stages aussi surprenants que nombreux, et éditez les créations d'autres joueurs "
-				+ "pour ajouter vos propres idées et créer quelque chose de nouveau et d'unique !",
-				today,
-				"McG",
-				new Locale("fr","FR"),"+7",PublicationState.DRAFT);
+						+ "En vous connectant à Internet*, vous pouvez télécharger et jouer dans des stages créés par d'autres joueurs du monde entier ! "
+						+ "100 stages sont également inclus et seront jouables sans qu'une connexion à Internet soit nécessaire. "
+						+ "Créez : concevez vos propres stages ! "
+						+ "Donnez libre cours à votre imagination et découvrez ce que vous arriverez à réaliser avec un éditeur de stages intuitif. "
+						+ "Partagez : envoyez vos créations pour que le monde entier en profite ! "
+						+ "En publiant vos propres créations, vous donnez aux joueur du monde entier la possibilité de les essayer ! "
+						+ "Découvrez d'innombrables stages aussi surprenants que nombreux, et éditez les créations d'autres joueurs "
+						+ "pour ajouter vos propres idées et créer quelque chose de nouveau et d'unique !",
+				today, "McG", new Locale("fr", "FR"), "+7", PublicationState.DRAFT);
 		post = postRepo.save(post);
 		assertNotNull(post.getId());
 	}
