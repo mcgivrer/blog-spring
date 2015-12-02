@@ -23,7 +23,6 @@ create table yablog.blogposts {
  content VARCHAR(4000) NOT NULL,
  rated VARCHAR(10),
  locale VARCHAR(10),
- last_connection DATE,
  STATUS CHAR(10) NOT NULL,
  created_at DATE,
  created_by VARCHAR(40)
