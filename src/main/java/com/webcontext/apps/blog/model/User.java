@@ -23,6 +23,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -37,53 +38,58 @@ import org.hibernate.validator.constraints.NotEmpty;
  *
  */
 @Entity
+@Table(name = "blogusers")
 public class User {
 
 	@Id
 	@Size(min = 4, max = 30)
-	@Column(name="USERNAME")
+	@Column(name = "USERNAME")
 	private String username;
 
 	@NotEmpty
 	@Size(min = 6, max = 255)
-	@Column(name="PASSWORD")
+	@Column(name = "PASSWORD")
 	private String password;
 
 	@NotEmpty
 	@Email
-	@Column(name="EMAIL")
+	@Column(name = "EMAIL")
 	private String email;
 
-	
 	@Size(min = 0, max = 60)
-	@Column(name="FIRSTNAME")
+	@Column(name = "FIRSTNAME")
 	private String firstname;
 
 	@Size(min = 0, max = 60)
-	@Column(name="LASTNAME")
+	@Column(name = "LASTNAME")
 	private String lastname;
 
 	@UpdateTimestamp
-	@Column(name="LAST_CONNECTION")
+	@Column(name = "LAST_CONNECTION")
 	private Date lastConnection;
 
 	@CreationTimestamp
-	@Column(name="CREATED_AT")	
+	@Column(name = "CREATED_AT")
 	private Date createdAt;
 
 	@NotEmpty
-	@Column(name="CREATED_BY")
+	@Column(name = "CREATED_BY")
 	private String createdBy;
 
 	@Enumerated(EnumType.STRING)
-	@Column(name="USER_PROFILE")
+	@Column(name = "USER_PROFILE")
 	UserProfile profile;
 
+	/**
+	 * Default constructor
+	 */
 	public User() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
 	/**
+	 * /** Parameterized User constructor.
+	 * 
 	 * @param username
 	 * @param password
 	 * @param email
@@ -95,7 +101,7 @@ public class User {
 	 */
 	public User(String username, String password, String email, String firstname, String lastname, Date lastConnection,
 			Date createdAt, String createdBy, UserProfile profile) {
-		super();
+		this();
 		this.username = username;
 		this.password = password;
 		this.email = email;
@@ -118,7 +124,7 @@ public class User {
 	 * @param username
 	 *            the username to set
 	 */
-	public void setUsername( String username ) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
@@ -133,7 +139,7 @@ public class User {
 	 * @param password
 	 *            the password to set
 	 */
-	public void setPassword( String password ) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
@@ -148,7 +154,7 @@ public class User {
 	 * @param email
 	 *            the email to set
 	 */
-	public void setEmail( String email ) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
@@ -163,7 +169,7 @@ public class User {
 	 * @param firstname
 	 *            the firstname to set
 	 */
-	public void setFirstname( String firstname ) {
+	public void setFirstname(String firstname) {
 		this.firstname = firstname;
 	}
 
@@ -178,7 +184,7 @@ public class User {
 	 * @param lastname
 	 *            the lastname to set
 	 */
-	public void setLastname( String lastname ) {
+	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
 
@@ -193,7 +199,7 @@ public class User {
 	 * @param lastConnection
 	 *            the lastConnection to set
 	 */
-	public void setLastConnection( Date lastConnection ) {
+	public void setLastConnection(Date lastConnection) {
 		this.lastConnection = lastConnection;
 	}
 
@@ -208,7 +214,7 @@ public class User {
 	 * @param createdAt
 	 *            the createdAt to set
 	 */
-	public void setCreatedAt( Date createdAt ) {
+	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
 
@@ -223,7 +229,7 @@ public class User {
 	 * @param createdBy
 	 *            the createdBy to set
 	 */
-	public void setCreatedBy( String createdBy ) {
+	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
 
@@ -238,7 +244,7 @@ public class User {
 	 * @param profile
 	 *            the profile to set
 	 */
-	public void setProfile( UserProfile profile ) {
+	public void setProfile(UserProfile profile) {
 		this.profile = profile;
 	}
 
@@ -283,7 +289,7 @@ public class User {
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
-	public boolean equals( Object obj ) {
+	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
 		}

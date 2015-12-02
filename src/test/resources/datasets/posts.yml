@@ -2,11 +2,10 @@ post:
   - id: 1
     title: Watch Dogs
     cover: http://ecx.images-amazon.com/images/I/81vltqLN7LL._SL500_.jpg
-    header: 
-    content: Récompensé par 83 awards et nominations dans le monde depuis son annonce événement \ 
+    header: Récompensé par 83 awards et nominations dans le monde depuis son annonce événement \ 
              en juin 2012, Watch Dogs est le jeu d’action et aventure \
-             en monde ouvert qui va redéfinir les standards du jeu vidéo nouvelle génération.\
-             Développé par Ubisoft Montréal, le studio des créateurs d’Assassin’s Creed III et \
+             en monde ouvert qui va redéfinir les standards du jeu vidéo nouvelle génération.
+    content: Développé par Ubisoft Montréal, le studio des créateurs d’Assassin’s Creed III et \
              Far Cry 3, Watch Dogs vous plonge au cœur de la ville hyper-connectée de Chicago, \
              dans laquelle votre smartphone vous donne le contrôle de tout ce qui est connecté au \ 
              réseau des caméras de surveillance aux feux de signalisation, en passant par le réseau \ 
@@ -14,15 +13,22 @@ post:
              vendetta contre les responsables du massacre de sa famille. Dans votre quête de \
              justice, la ville elle-même devient une arme mortelle et vous en détenez maintenant \ 
              le contrôle.
+    editor: UBISOFT
+    developer: Ubisoft Montréal
+    tags: aventure, action, gtalike
+    platforms: x360,xone,ps3,ps4,pc
+    testedOnPlatform: x360
+    locale: fr_FR
+    rated: 18+
     createdAt: '2015-11-24 21:43'
     createdBy: McG
-    status: published
+    status: PUBLISHED
   - id: 2
     title: The bureau XCOM declassified
     cover: http://ecx.images-amazon.com/images/I/71TVBgW74BL._SL1416_.jpg
-    header:
-    content: The Bureau - XCOM Declassified est un jeu de tir tactique à la troisième \
-             personne dont l’action se situe en 1962. La Guerre Froide provoque la peur \
+    header:  The Bureau - XCOM Declassified est un jeu de tir tactique à la troisième \
+             personne dont l’action se situe en 1962.
+    content: La Guerre Froide provoque la peur \
              sur la nation, mais un ennemi bien plus puissant et insidieux que le communisme \
              menace le pays. Une unité top-secrète du gouvernement, appelée « Le Bureau », \
              commence à enquêter et à dissimuler une série d’attaques mystérieuses. \
@@ -33,15 +39,21 @@ post:
              l’immersion dans l’Amérique des années 60, du combat tactique en équipe, \
              des conséquences brutales et des camouflages gouvernementaux qui prouvent que \
              nous ne sommes pas seuls dans l’univers.
+    editor: 2K Games
+    developer: 2K Marin
+    tags: aventure, action, tactic
+    platforms: x360,xone,ps3,ps4,pc
+    testedOnPlatform: x360
+    locale: fr_FR
+    rated: 18+
     createdAt: '2015-11-24 21:43'
     createdBy: McG
-    status: published
-  - id:3
-    title: The Witcher 3
+    status: PUBLISHED
+  - id: 3
+    title: The Witcher 2
     cover: http://ecx.images-amazon.com/images/I/81o0jF6OZoL._SL1418_.jpg
-    header: 
-    content: Vous êtes Geralt de Riv, un chasseur de monstre professionnel, un sorceleur.  \
-             Pris dans la tourmente politique qui s’est emparée de Temeria, Geralt aida à \
+    header: Vous êtes Geralt de Riv, un chasseur de monstre professionnel, un sorceleur.
+    content: Pris dans la tourmente politique qui s’est emparée de Temeria, Geralt aida à \
              réprimer la rébellion de l’Ordre de la Rose Ardente. Peu après, il sauva la \
              vie du roi Foltest quand le monarque fut attaqué par un assassin ressemblant \
              à un sorceleur. Geralt continua de protéger le roi en tant que garde du corps \
@@ -53,6 +65,13 @@ post:
              se préparant pour l’assaut final. Toujours aux côtés de Foltest, Geralt est \
              parmi les soldats, dans l’impossibilité de commencer sa quête personnelle \
              pour découvrir l’origine et l’identité du mystérieux assassin…
+    editor: CDPRojeckt Red
+    developer: CDPRojeckt Red
+    tags: aventure, rpg
+    platforms: x360,xone,ps3,ps4,pc
+    testedOnPlatform: x360
+    locale: fr_FR
+    rated: 18+
     createdAt: McG
     createdBy: '2015-11-30 10:49'
-    status: draft 
+    status: DRAFT 

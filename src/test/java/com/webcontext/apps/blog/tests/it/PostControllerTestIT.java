@@ -38,7 +38,10 @@ import com.webcontext.apps.blog.model.PublicationState;
 import com.webcontext.apps.blog.repositories.PostRepository;
 
 /**
- * @author frederic
+
+ * Integration test for rest service from PostController.
+ * 
+ * @author Frédéric Delorme
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -57,7 +60,6 @@ public class PostControllerTestIT {
 	PostRepository postRepo;
 
 	private Date today;
-	private Post post0, post1, post2, post3;
 
 	@Value("${local.server.port}")
 	int port = 0;

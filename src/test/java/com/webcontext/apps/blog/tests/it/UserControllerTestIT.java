@@ -37,7 +37,9 @@ import com.webcontext.apps.blog.model.UserProfile;
 import com.webcontext.apps.blog.repositories.UserRepository;
 
 /**
- * @author frederic
+ * Integration test for rest service from UserController.
+ * 
+ * @author Frédéric Delorme
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -68,11 +70,14 @@ public class UserControllerTestIT {
 
 	@Test
 	public void canFindAllUsers() {
-		when().get("/users").then().statusCode(HttpStatus.SC_OK).body("username", Matchers.hasItems("admin", "McGivrer"));
+
+		when().get("/users").then().statusCode(HttpStatus.SC_OK).body("username",
+				Matchers.hasItems("admin", "McGivrer"));
 	}
 
 	/**
-	 * Test method for {@link com.webcontext.apps.blog.services.PostController#findById(long)}.
+	 * Test method for
+	 * {@link com.webcontext.apps.blog.services.PostController#findById(long)}.
 	 */
 	@Test
 	public void canFindUserById() {
@@ -81,7 +86,9 @@ public class UserControllerTestIT {
 	}
 
 	/**
-	 * Test method for {@link com.webcontext.apps.blog.services.PostController#addItem(com.webcontext.apps.blog.model.Post)} .
+	 * Test method for
+	 * {@link com.webcontext.apps.blog.services.PostController#addItem(com.webcontext.apps.blog.model.Post)}
+	 * .
 	 */
 	@Test
 	public void canAddNewUser() {
@@ -100,7 +107,8 @@ public class UserControllerTestIT {
 
 	/**
 	 * Test method for
-	 * {@link com.webcontext.apps.blog.services.PostController#updateItem(com.webcontext.apps.blog.model.Post, java.lang.Long)} .
+	 * {@link com.webcontext.apps.blog.services.PostController#updateItem(com.webcontext.apps.blog.model.Post, java.lang.Long)}
+	 * .
 	 */
 	@Test
 	public void canUpdateExistingUser() {
@@ -112,7 +120,9 @@ public class UserControllerTestIT {
 	}
 
 	/**
-	 * Test method for {@link com.webcontext.apps.blog.services.PostController#deleteItem(java.lang.Long)} .
+	 * Test method for
+	 * {@link com.webcontext.apps.blog.services.PostController#deleteItem(java.lang.Long)}
+	 * .
 	 */
 	@Test
 	public void canDeleteUserMcGivrer() {
