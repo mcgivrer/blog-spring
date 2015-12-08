@@ -1,0 +1,21 @@
+<div class="game" ng-controller="AppController">
+	<h1>{{game.title}}</h1>
+	<ul class="tags">
+		<li ng-repeat="tag in game.tags"><a href="/tags/{{tag}}" title="View all games tagged '{{tag}}'">{{tag}}</a></li>
+	</ul>
+	<ul class="platforms">
+		<li ng-repeat="platform in game.platforms"><a href="/platform/{{platform}}" title="View all games on platform {{platform}}">{{platform}}</a></li>
+	</ul>
+	<div ng-if="game.header != ''" class="header">
+		{{game.header}}
+	</div>
+	<div ng-if="game.content != ''" class="content">
+		{{game.content}}
+	</div>
+	<div class="info">
+		<ul class="publish">
+			<li class="createdBy"><a href="/author/{{game.author}}" title="see all posts from {{game.author}}">{{game.author}}</a></li>
+			<li class="createdAt"><a href="/createdAt/{{game.date}}" title="filter al post on date {{game.date}} ">{{game.author | format: 'dd/mm/yyyy'}}</a></li>
+		</ul>
+	</div>
+</div>

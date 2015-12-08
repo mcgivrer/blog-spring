@@ -33,9 +33,9 @@ import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
 import com.webcontext.apps.blog.Application;
-import com.webcontext.apps.blog.model.Post;
+import com.webcontext.apps.blog.model.Game;
 import com.webcontext.apps.blog.model.PublicationState;
-import com.webcontext.apps.blog.repositories.PostRepository;
+import com.webcontext.apps.blog.repositories.GameRepository;
 
 /**
 
@@ -52,12 +52,12 @@ import com.webcontext.apps.blog.repositories.PostRepository;
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, DirtiesContextTestExecutionListener.class,
 		TransactionalTestExecutionListener.class, DbUnitTestExecutionListener.class })
 @DatabaseSetup("/datasets/posts.xml")
-public class PostControllerTestIT {
+public class GameControllerTestIT {
 
 	RestTemplate template = new TestRestTemplate();
 
 	@Autowired
-	PostRepository postRepo;
+	GameRepository postRepo;
 
 	private Date today;
 
@@ -79,7 +79,7 @@ public class PostControllerTestIT {
 	}
 
 	/**
-	 * Test method for {@link com.webcontext.apps.blog.services.PostController#findById(long)}.
+	 * Test method for {@link com.webcontext.apps.blog.services.GameController#findById(long)}.
 	 */
 	@Test
 	public void canFindPostById() {
@@ -88,11 +88,11 @@ public class PostControllerTestIT {
 	}
 
 	/**
-	 * Test method for {@link com.webcontext.apps.blog.services.PostController#addItem(com.webcontext.apps.blog.model.Post)} .
+	 * Test method for {@link com.webcontext.apps.blog.services.GameController#addItem(com.webcontext.apps.blog.model.Game)} .
 	 */
 	@Test
 	public void canAddNewPost() {
-		Post post = new Post("Mario maker", "http://ecx.images-amazon.com/images/I/81NvDQon5NL._SL1500_.jpg",
+		Game post = new Game("Mario maker", "http://ecx.images-amazon.com/images/I/81NvDQon5NL._SL1500_.jpg",
 				"Avec un nombre quasiment illimité de stages, Super Mario Maker exclusivement disponible sur Wii U "
 						+ "propose une expérience Mario amusante destinées à tous et sans limite ! ",
 				"Jouez : un jeu Mario qui ne se termine jamais !"
@@ -110,7 +110,7 @@ public class PostControllerTestIT {
 
 	@Test
 	public void canNotAddEmptyFieldsPost() {
-		Post post = new Post("", "", "", "", today, "", new Locale("fr", "FR"), "+7", PublicationState.DRAFT);
+		Game post = new Game("", "", "", "", today, "", new Locale("fr", "FR"), "+7", PublicationState.DRAFT);
 		expect().statusCode(HttpStatus.SC_INTERNAL_SERVER_ERROR).given().body(post).contentType(ContentType.JSON)
 				.post("/posts");
 
@@ -118,11 +118,11 @@ public class PostControllerTestIT {
 
 	/**
 	 * Test method for
-	 * {@link com.webcontext.apps.blog.services.PostController#updateItem(com.webcontext.apps.blog.model.Post, java.lang.Long)} .
+	 * {@link com.webcontext.apps.blog.services.GameController#updateItem(com.webcontext.apps.blog.model.Game, java.lang.Long)} .
 	 */
 	@Test
 	public void canUpdateExistingPost() {
-		Post postTobeUpdate = postRepo.findOne(2);
+		Game postTobeUpdate = postRepo.findOne(2);
 		System.out.println(postTobeUpdate);
 		postTobeUpdate.setContent("This is a new value");
 		expect().statusCode(HttpStatus.SC_OK).given().body(postTobeUpdate).contentType(ContentType.JSON)
@@ -130,7 +130,7 @@ public class PostControllerTestIT {
 	}
 
 	/**
-	 * Test method for {@link com.webcontext.apps.blog.services.PostController#deleteItem(java.lang.Long)} .
+	 * Test method for {@link com.webcontext.apps.blog.services.GameController#deleteItem(java.lang.Long)} .
 	 */
 	@Test
 	public void canDeletePost0() {

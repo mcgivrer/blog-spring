@@ -1,0 +1,18 @@
+<div class="game-list"  ng-controller="AppController">
+	<ul>
+		<li ng-repeat="game in games">
+			<em><a href="/game/{{game.id}}" title="view details for {{game.title}}"></a>{{game.title}}</em>
+			<ul><li ng-repeat="tag in game.tags">
+					<a href="/tag/{{tag}}" title="view game from tag {{tag}}">{{tag}}</a>
+				</li>
+			</ul>
+			<ul><li ng-repeat="platform in game.platforms">
+					<a href="/platform/{{platform}}" title="View all games for platform {{platform}}">{{platform}}</a>
+				</li>
+			</ul>
+			<div class="header" ng-if="game.platform">
+				{{game.header}}
+			</div>
+		</li>
+	</ul>
+</div>

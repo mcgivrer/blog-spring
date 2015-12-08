@@ -77,7 +77,7 @@ public class UserControllerTestIT {
 
 	/**
 	 * Test method for
-	 * {@link com.webcontext.apps.blog.services.PostController#findById(long)}.
+	 * {@link com.webcontext.apps.blog.services.GameController#findById(long)}.
 	 */
 	@Test
 	public void canFindUserById() {
@@ -87,7 +87,7 @@ public class UserControllerTestIT {
 
 	/**
 	 * Test method for
-	 * {@link com.webcontext.apps.blog.services.PostController#addItem(com.webcontext.apps.blog.model.Post)}
+	 * {@link com.webcontext.apps.blog.services.GameController#addItem(com.webcontext.apps.blog.model.Post)}
 	 * .
 	 */
 	@Test
@@ -107,7 +107,7 @@ public class UserControllerTestIT {
 
 	/**
 	 * Test method for
-	 * {@link com.webcontext.apps.blog.services.PostController#updateItem(com.webcontext.apps.blog.model.Post, java.lang.Long)}
+	 * {@link com.webcontext.apps.blog.services.GameController#updateItem(com.webcontext.apps.blog.model.Post, java.lang.Long)}
 	 * .
 	 */
 	@Test
@@ -121,7 +121,7 @@ public class UserControllerTestIT {
 
 	/**
 	 * Test method for
-	 * {@link com.webcontext.apps.blog.services.PostController#deleteItem(java.lang.Long)}
+	 * {@link com.webcontext.apps.blog.services.GameController#deleteItem(java.lang.Long)}
 	 * .
 	 */
 	@Test

@@ -1,6 +1,6 @@
 (function(angular) {
-	var PostFactory = function($resource) {
-		return $resource('/posts/:id', {
+	var GameFactory = function($resource) {
+		return $resource('/game/:id', {
 			id : '@id'
 		}, {
 			update : {
@@ -24,6 +24,10 @@
 		});
 	};
 
+	GameFactory.$inject = [ '$resource' ];
+	angular.module("yaBlog.services").factory("Game", GameFactory);
+
 	UserFactory.$inject = [ '$resource' ];
-	angular.module("myApp.services").factory("User", UserFactory);
+	angular.module("yaBlog.services").factory("User", UserFactory);
+
 }(angular));

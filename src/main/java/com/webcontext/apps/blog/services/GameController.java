@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.webcontext.apps.blog.model.Post;
-import com.webcontext.apps.blog.repositories.PostRepository;
+import com.webcontext.apps.blog.model.Game;
+import com.webcontext.apps.blog.repositories.GameRepository;
 
 /**
  * The REst controller for the application.
@@ -21,18 +21,18 @@ import com.webcontext.apps.blog.repositories.PostRepository;
  *
  */
 @RestController
-public class PostController {
+public class GameController {
 
 	@Autowired
-	private PostRepository repo;
+	private GameRepository repo;
 
 	/**
 	 * retrieve all posts
 	 * 
 	 * @return
 	 */
-	@RequestMapping(value="/posts", method = RequestMethod.GET)
-	public List<Post> findPosts() {
+	@RequestMapping(value="/games", method = RequestMethod.GET)
+	public List<Game> findPosts() {
 		return repo.findAll();
 	}
 
@@ -42,9 +42,9 @@ public class PostController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value="/posts/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/game/{id}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
-	public Post findById(@PathVariable("id") Integer id) {
+	public Game findById(@PathVariable("id") Integer id) {
 		return repo.findOne(id);
 
 	}
@@ -55,8 +55,8 @@ public class PostController {
 	 * @param item
 	 * @return
 	 */
-	@RequestMapping(value="/posts", method = RequestMethod.POST)
-	public Post addItem(@RequestBody Post item) {
+	@RequestMapping(value="/game", method = RequestMethod.POST)
+	public Game addItem(@RequestBody Game item) {
 		item.setId(null);
 		return repo.saveAndFlush(item);
 	}
@@ -68,8 +68,8 @@ public class PostController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping(value="/posts/{id}", method = RequestMethod.PUT)
-	public Post updateItem(@RequestBody Post updatedItem, @PathVariable Integer id) {
+	@RequestMapping(value="/game/{id}", method = RequestMethod.PUT)
+	public Game updateItem(@RequestBody Game updatedItem, @PathVariable Integer id) {
 		updatedItem.setId(id);
 		return repo.saveAndFlush(updatedItem);
 	}
@@ -79,7 +79,7 @@ public class PostController {
 	 * 
 	 * @param id
 	 */
-	@RequestMapping(value="/posts/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/game/{id}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteItem(@PathVariable Integer id) {
 		repo.delete(id);

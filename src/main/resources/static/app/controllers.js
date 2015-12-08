@@ -1,10 +1,13 @@
 (function(angular) {
-	var AppController = function($scope, Item) {
-		Item.query(function(response) {
-			$scope.items = response ? response : [];
+	var AppController = function($scope, Game, $routeParams) {
+		Game.query(function(response) {
+			$scope.games = response ? response : [];
 		});
+		
+		$scope.game=Game.get('/game/:id',{id:$routeParams.id});
 
-		$scope.addItem = function(description) {
+		/*
+ 		$scope.addItem = function(description) {
 			new Item({
 				description : description,
 				checked : false
@@ -23,9 +26,10 @@
 				$scope.items.splice($scope.items.indexOf(item), 1);
 			});
 		};
+ 		*/
 	};
 
 	AppController.$inject = [ '$scope', 'Item' ];
-	angular.module("myApp.controllers").controller("AppController",
+	angular.module("yaBlog.controllers").controller("AppController",
 			AppController);
 }(angular));

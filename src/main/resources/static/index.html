@@ -6,42 +6,29 @@
 <link rel="stylesheet"
 	href="./bower_components/bootstrap-css-only/css/bootstrap.min.css" />
 </head>
-<body ng-app="myApp">
+<body ng-app="yaBlog">
 	<div class="container" ng-controller="AppController">
-		<div class="page-header">
-			<h1>A checklist</h1>
-		</div>
+		<header class="page-header">
+			<h1>YaBlog ²</h1>
+		</header>
 		<div class="alert alert-info" role="alert"
 			ng-hide="posts && posts.length > 0">There are no items yet.</div>
-		<form class="form-horizontal" role="form" ng-submit="addPost(newPost)">
-			<div class="form-group" ng-repeat="post in posts">
-				<div class="checkbox col-xs-9">
-					<label> <input type="checkbox" ng-model="item.checked"
-						ng-change="updatePost(post)" /> {{post.title}}
-					</label>
-				</div>
-				<div class="col-xs-3">
-					<button class="pull-right btn btn-danger" type="button"
-						title="Delete" ng-click="deletePost(post)">
-						<span class="glyphicon glyphicon-trash"></span>
-					</button>
-				</div>
-			</div>
-			<hr />
-			<div class="input-group">
-				<input type="text" class="form-control" ng-model="newPost"
-					placeholder="Enter the description..." /> <span
-					class="input-group-btn">
-					<button class="btn btn-default" type="submit"
-						ng-disabled="!newPost" title="Add">
-						<span class="glyphicon glyphicon-plus"></span>
-					</button>
-				</span>
-			</div>
-		</form>
+		<sidebar ng-hide="!(posts && posts.length > 0)">
+		<ul>
+			<li ng-repeat="game in games"><a href="#/game/{{game.id}}"
+				title="show {{game.title}} details">{{game.title}}</a></li>
+		</ul>
+		</sidebar>
+
+		<div ng-view></div>
+		<footer>
+			&copy; 2015 - <a href="http://www.web-context.com/" title="">WebContext</a>
+		</footer>
 	</div>
 	<script type="text/javascript"
 		src="./bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript"
+		src="./bower_components/angular-route/angular-route.min.js"></script>
 	<script type="text/javascript"
 		src="./bower_components/angular-resource/angular-resource.min.js"></script>
 	<script type="text/javascript"

@@ -29,8 +29,8 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
  *
  */
 @Entity
-@Table(name = "blogposts")
-public class Post {
+@Table(name = "bloggames")
+public class Game {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -75,7 +75,7 @@ public class Post {
 	/**
 	 * Default constructor.
 	 */
-	public Post() {
+	public Game() {
 		super();
 		locale = new Locale("fr", "FR");
 	}
@@ -91,7 +91,7 @@ public class Post {
 	 * @param rated
 	 * @param status
 	 */
-	public Post(String title, String cover, String header, String content, Date createdAt, String createdBy,
+	public Game(String title, String cover, String header, String content, Date createdAt, String createdBy,
 			Locale locale, String rated, PublicationState status) {
 		this();
 		this.title = title;
@@ -261,10 +261,10 @@ public class Post {
 		if (obj == null) {
 			return false;
 		}
-		if (!(obj instanceof Post)) {
+		if (!(obj instanceof Game)) {
 			return false;
 		}
-		Post other = (Post) obj;
+		Game other = (Game) obj;
 		if (content == null) {
 			if (other.content != null) {
 				return false;

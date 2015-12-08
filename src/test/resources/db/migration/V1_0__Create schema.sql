@@ -1,5 +1,5 @@
 -- CREATE SCHEMA
-create schema public.yablog if not exists;
+create schema public.yablog;
 using public.yablog;
 -- DROP EXISTING TABLES
 drop table blogusers if exists;

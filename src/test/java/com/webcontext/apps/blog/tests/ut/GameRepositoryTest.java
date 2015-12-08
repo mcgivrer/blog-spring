@@ -1,5 +1,5 @@
 /**
- * file: PostRepositoryTest.java
+t * file: PostRepositoryTest.java
  * date: 30 nov. 2015
  *
  * GEHC DoseWatch
@@ -40,9 +40,9 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.webcontext.apps.blog.Application;
-import com.webcontext.apps.blog.model.Post;
+import com.webcontext.apps.blog.model.Game;
 import com.webcontext.apps.blog.model.PublicationState;
-import com.webcontext.apps.blog.repositories.PostRepository;
+import com.webcontext.apps.blog.repositories.GameRepository;
 
 /**
  * Unit Tests for PostRepository.
@@ -56,10 +56,10 @@ import com.webcontext.apps.blog.repositories.PostRepository;
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, DirtiesContextTestExecutionListener.class,
 		TransactionalTestExecutionListener.class, DbUnitTestExecutionListener.class })
 @DatabaseSetup("/datasets/posts.xml")
-public class PostRepositoryTest {
+public class GameRepositoryTest {
 
 	@Autowired
-	PostRepository postRepo;
+	GameRepository postRepo;
 
 	/**
 	 * @throws java.lang.Exception
@@ -82,7 +82,7 @@ public class PostRepositoryTest {
 	@Test
 	public void testSaveS() {
 		Date today = new Date();
-		Post post = new Post("Mario maker", "http://ecx.images-amazon.com/images/I/81NvDQon5NL._SL1500_.jpg",
+		Game post = new Game("Mario maker", "http://ecx.images-amazon.com/images/I/81NvDQon5NL._SL1500_.jpg",
 				"Avec un nombre quasiment illimité de stages, Super Mario Maker exclusivement disponible sur Wii U "
 						+ "propose une expérience Mario amusante destinées à tous et sans limite ! ",
 				"Jouez : un jeu Mario qui ne se termine jamais !"
@@ -106,7 +106,7 @@ public class PostRepositoryTest {
 	 */
 	@Test
 	public void testFindOne() {
-		Post post = postRepo.findOne(new Integer(1));
+		Game post = postRepo.findOne(new Integer(1));
 		assertNotNull(post);
 		assertEquals("Watch Dogs", post.getTitle());
 	}
@@ -117,9 +117,9 @@ public class PostRepositoryTest {
 	 */
 	@Test
 	public void testFindAll() {
-		List<Post> posts = postRepo.findAll();
+		List<Game> posts = postRepo.findAll();
 		List<String> titles = Arrays.asList("Watch Dogs", "The bureau XCOM declassified", "The Witcher 3");
-		for (Post post : posts) {
+		for (Game post : posts) {
 			assertEquals(true, titles.contains(post.getTitle()));
 		}
 	}
@@ -142,7 +142,7 @@ public class PostRepositoryTest {
 	@Test
 	public void testDeleteID() {
 		postRepo.delete(1);
-		Post post = postRepo.findOne(1);
+		Game post = postRepo.findOne(1);
 		assertEquals(null, post);
 	}
 
