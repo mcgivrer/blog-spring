@@ -122,6 +122,7 @@ module.exports = function(grunt) {
     grunt.registerTask('serve', ['clean', 'copy:css', 'sass:server',
         'autoprefixer', 'uglify:server'
     ]);
+
     grunt.registerTask('build', ['clean', 'copy:css', 'sass:dist',
         'autoprefixer', 'uglify:dist'
     ]);
