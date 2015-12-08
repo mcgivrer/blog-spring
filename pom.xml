@@ -123,6 +123,72 @@
 					<releaseVersion>${project.version}</releaseVersion>
 				</configuration>
 			</plugin>
+			<!-- Front end mangement -->
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>0.0.26</version>
+				<configuration>
+					<srcdir>${basedir}/src/main/resources/static/app</srcdir>
+					<outputdir>${basedir}/src/main/resources/static</outputdir>
+					<triggerfiles>
+						<triggerfile>Gruntfile.js</triggerfile>
+						<triggerfile>package.json</triggerfile>
+					</triggerfiles>
+					<arguments>${target.environment}</arguments>
+				</configuration>
+				<executions>
+					<!-- Install node and npm -->
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<nodeVersion>v4.2.3</nodeVersion>
+							<npmVersion>2.7.1</npmVersion>
+							<nodeDownloadRoot>http://nodejs.org/dist/</nodeDownloadRoot>
+							<npmDownloadRoot>http://registry.npmjs.org/npm/-/</npmDownloadRoot>
+						</configuration>
+					</execution>
+					
+					<!-- npm install -->
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<arguments>install</arguments>
+						</configuration>
+					</execution>
+
+					<!-- bower install -->
+					<execution>
+						<id>bower install</id>
+						<goals>
+							<goal>bower</goal>
+						</goals>
+						<configuration>
+							<arguments>install</arguments>
+						</configuration>
+					</execution>
+
+					<!-- grunt build -->
+					<execution>
+						<id>grunt build</id>
+						<goals>
+							<goal>grunt</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<arguments>build</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 	<scm>

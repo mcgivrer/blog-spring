@@ -10,7 +10,7 @@ YaBlog is **Y**et**A**nother**B**log engine, based on Spring-Boot technologies a
     $> maven spring-boot:run
 
 
-let's access [http://localhost:8080/](http://localhost:8080/ "access the blog home page")
+Let's access [http://localhost:8080/](http://localhost:8080/ "access the blog home page")
 
 and that's all !
 

@@ -5,6 +5,8 @@
 <title>YaBlog</title>
 <link rel="stylesheet"
 	href="./bower_components/bootstrap-css-only/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="./css/main.css" />
 </head>
 <body ng-app="yaBlog">
 	<div class="container" ng-controller="AppController">
@@ -12,14 +14,13 @@
 			<h1>YaBlog ²</h1>
 		</header>
 		<div class="alert alert-info" role="alert"
-			ng-hide="posts && posts.length > 0">There are no items yet.</div>
-		<sidebar ng-hide="!(posts && posts.length > 0)">
-		<ul>
-			<li ng-repeat="game in games"><a href="#/game/{{game.id}}"
-				title="show {{game.title}} details">{{game.title}}</a></li>
-		</ul>
+			ng-hide="games && games.length > 0">There are no items yet.</div>
+		<sidebar ng-hide="!(games && games.length > 0)">
+			<ul>
+				<li ng-repeat="game in games"><a href="#/game/{{game.id}}"
+					title="show {{game.title}} details">{{game.title}}</a></li>
+			</ul>
 		</sidebar>
-
 		<div ng-view></div>
 		<footer>
 			&copy; 2015 - <a href="http://www.web-context.com/" title="">WebContext</a>
@@ -32,7 +33,7 @@
 	<script type="text/javascript"
 		src="./bower_components/angular-resource/angular-resource.min.js"></script>
 	<script type="text/javascript"
-		src="./bower_components/lodash/dist/lodash.min.js"></script>
+		src="./bower_components/lodash/lodash.min.js"></script>
 	<script type="text/javascript" src="./app/app.js"></script>
 	<script type="text/javascript" src="./app/controllers.js"></script>
 	<script type="text/javascript" src="./app/services.js"></script>

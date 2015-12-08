@@ -17,3 +17,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 >>>>>>> 6d1946c5187bfa51d1552619888f77e55d7e839c
+/node/
+/node_modules/
+/node_tmp/
+/bower_components/
