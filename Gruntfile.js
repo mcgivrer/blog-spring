@@ -123,9 +123,11 @@ module.exports = function(grunt) {
         'autoprefixer', 'uglify:server'
     ]);
 
-    grunt.registerTask('build', ['clean', 'copy:css', 'sass:dist',
-        'autoprefixer', 'uglify:dist'
-    ]);
+    /*grunt.registerTask('build', ['clean', 'copy:css', 'sass:dist',
+                                 'autoprefixer', 'uglify:dist'
+                             ]);*/
+    grunt.registerTask('build', ['clean', 'copy:css', 'autoprefixer', 'uglify:dist'
+                             ]);
  
     grunt.registerTask('default', ['build']);
 };
